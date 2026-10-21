@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:30:00 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/20 22:52:41 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/21 22:50:04 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "libft.h"
+# include "./libft/libft.h"
 
 typedef int	(*t_conv)(va_list *args);
 
@@ -36,5 +36,7 @@ int	ft_print_unsigned(va_list *args);
 int	ft_print_hex_low(va_list *args);
 int	ft_print_hex_up(va_list *args);
 int	ft_print_percent(va_list *args);
+
+int	ft_printchar_count(unsigned char c);
 
 #endif
