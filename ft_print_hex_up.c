@@ -1,21 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_n.c                                       :+:      :+:    :+:   */
+/*   ft_print_hex_up.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 12:34:36 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/20 22:18:28 by sfaraji          ###   ########.fr       */
+/*   Created: 2026/10/21 09:55:08 by sfaraji           #+#    #+#             */
+/*   Updated: 2026/10/21 09:55:59 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_parse_n(const char *str, va_list *args)
-{
-	int	count;
-
-	count = 0;
-	return (count);
-}
+int	ft_print_hex_up(va_list *args);
