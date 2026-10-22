@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:30:00 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/21 22:50:04 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/22 13:53:17 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int	ft_print_hex_up(va_list *args);
 int	ft_print_percent(va_list *args);
 
 int	ft_printchar_count(unsigned char c);
+char *ft_utoa(unsigned long value, const char *base, unsigned long blen);
 
 #endif
