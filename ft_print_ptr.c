@@ -6,16 +6,16 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:17 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/22 14:29:49 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/23 10:12:11 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int	ft_print_ptr(va_list *args)
-
 {
 	int				ret;
+	int				fret;
 	char			*str;
 	unsigned long	arg;
 
@@ -28,9 +28,14 @@ int	ft_print_ptr(va_list *args)
 	str = ft_utoa(arg, "0123456789abcdef", 16);
 	if (!str)
 		return (-1);
-	ret = write(1, "0x", 2);
+	fret = write(1, "0x", 2);
+	ret = fret;
 	if (ret >= 0)
-		ret += write(1, str, ft_strlen(str));
+	{
+		ret = write(1, str, ft_strlen(str));
+		if (ret >= 0)
+			ret += fret;
+	}
 	free(str);
 	return (ret);
 }
