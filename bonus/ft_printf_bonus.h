@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:30:00 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 11:28:27 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/23 18:52:59 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_parse
 
 int		ft_printf(const char *format, ...);
 int		ft_parse_b(char spec, va_list *args, t_flags *flags);
+void	ft_read_flags_b(const char *format, int *i, t_flags *flags);
 
 int		ft_print_char_b(va_list *args, t_flags *flags);
 int		ft_print_str_b(va_list *args, t_flags *flags);
@@ -51,6 +52,7 @@ int		ft_print_hex_up_b(va_list *args, t_flags *flags);
 int		ft_print_percent_b(va_list *args, t_flags *flags);
 
 int		ft_printchar_count_b(unsigned char c);
+int		ft_putpad_b(char c, int n);
 char	*ft_utoa_b(unsigned long value, const char *base, unsigned long blen);
 
 #endif

@@ -28,7 +28,9 @@ SRCS_B		= bonus/ft_printf_bonus.c \
 			bonus/ft_print_hex_up_bonus.c \
 			bonus/ft_print_percent_bonus.c \
 			bonus/ft_printchar_count_bonus.c \
-			bonus/ft_utoa_bonus.c
+			bonus/ft_utoa_bonus.c \
+			bonus/ft_putpad_bonus.c \
+			bonus/ft_read_flags_bonus.c
 
 OBJS		= $(SRCS:.c=.o)
 OBJS_B		= $(SRCS_B:.c=.o)
