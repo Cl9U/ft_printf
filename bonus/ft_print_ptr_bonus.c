@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:17 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 11:52:29 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/24 11:49:14 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_print_ptr_b(va_list *args, t_flags *flags)
 	int				fret;
 	char			*str;
 	unsigned long	arg;
-	(void)flags;
 
+	(void)flags;
 	arg = va_arg(*args, unsigned long);
 	if (!arg)
 	{

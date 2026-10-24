@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:30:00 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 18:52:59 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/24 11:16:05 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define FT_PRINTF_BONUS_H
 
 # include <stdarg.h>
+# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "../libft/libft.h"
 
 typedef struct s_flags
@@ -40,7 +42,7 @@ typedef struct s_parse
 
 int		ft_printf(const char *format, ...);
 int		ft_parse_b(char spec, va_list *args, t_flags *flags);
-void	ft_read_flags_b(const char *format, int *i, t_flags *flags);
+int		ft_read_flags_b(const char *format, int *i, t_flags *flags);
 
 int		ft_print_char_b(va_list *args, t_flags *flags);
 int		ft_print_str_b(va_list *args, t_flags *flags);

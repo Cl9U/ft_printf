@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:14 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 11:53:04 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/24 11:49:10 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_print_percent_b(va_list *args, t_flags *flags)
 {
 	int	ret;
-	(void)flags;
 
+	(void)flags;
 	(void)args;
 	ret = ft_printchar_count_b('%');
 	return (ret);

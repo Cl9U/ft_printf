@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:05 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 11:52:53 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/24 11:48:52 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_print_hex_low_b(va_list *args, t_flags *flags)
 {
 	int		ret;
 	char	*str;
-	(void)flags;
 
+	(void)flags;
 	str = ft_utoa_b(va_arg(*args, unsigned int), "0123456789abcdef", 16);
 	if (!str)
 		return (-1);
