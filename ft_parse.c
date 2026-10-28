@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/12 11:50:21 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/12 11:50:22 by sfaraji          ###   ########.fr       */
+/*   Created: 2026/10/20 12:34:36 by sfaraji           #+#    #+#             */
+/*   Updated: 2026/10/28 12:21:35 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_parse(char spec, va_list *args)
 {
-	size_t				i;
-	const unsigned char	*src1;
-	const unsigned char	*src2;
+	int						i;
+	static const t_parse	table[] = {
+	{'c', ft_print_char},
+	{'s', ft_print_str},
+	{'p', ft_print_ptr},
+	{'d', ft_print_nbr},
+	{'i', ft_print_nbr},
+	{'u', ft_print_unsigned},
+	{'x', ft_print_hex_low},
+	{'X', ft_print_hex_up},
+	{'%', ft_print_percent},
+	{0, NULL}
+	};
 
-	src1 = (const unsigned char *)s1;
-	src2 = (const unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (table[i].spec)
 	{
-		if (src1[i] != src2[i])
-			return (src1[i] - src2[i]);
+		if (table[i].spec == spec)
+			return (table[i].func(args));
 		i++;
 	}
 	return (0);

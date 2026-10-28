@@ -1,27 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex_up_bonus.c                            :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 09:55:08 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/24 11:48:57 by sfaraji          ###   ########.fr       */
+/*   Created: 2026/10/12 22:13:57 by sfaraji           #+#    #+#             */
+/*   Updated: 2026/10/25 09:38:05 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
-int	ft_print_hex_up_b(va_list *args, t_flags *flags)
+static int	ft_numlen(long n)
 {
-	int		ret;
-	char	*str;
+	int	len;
 
-	(void)flags;
-	str = ft_utoa_b(va_arg(*args, unsigned int), "0123456789ABCDEF", 16);
+	len = (n <= 0);
+	while (n)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	nbr;
+	int		len;
+
+	nbr = n;
+	len = ft_numlen(nbr);
+	str = malloc(len + 1);
 	if (!str)
-		return (-1);
-	ret = write(1, str, ft_strlen(str));
-	free(str);
-	return (ret);
+		return (NULL);
+	str[len] = '\0';
+	if (nbr < 0)
+	{
+		str[0] = '-';
+		nbr = -nbr;
+	}
+	if (nbr == 0)
+		str[0] = '0';
+	while (nbr)
+	{
+		str[--len] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	return (str);
 }
