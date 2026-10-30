@@ -6,50 +6,56 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:29:56 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/21 23:20:27 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/30 14:15:56 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_step(const char *format, int *i, va_list *args)
+static int	ft_step(const char *format, int *i, va_list *args, int *bad)
 {
-	int	ret;
-
-	if (format[*i] == '%')
+	t_conv	conv;
+	int		ret;
+ 
+	if (format[*i] != '%')
+		return (ft_printchar_count(format[(*i)++]));
+	if (!format[*i + 1])
 	{
-		if (format[*i + 1])
-		{
-			ret = ft_parse(format[*i + 1], args);
-			*i += 2;
-		}
-		else
-		{
-			ret = -1;
-			(*i)++;
-		}
+		ret = -1;
+		if (*bad)
+			ret = ft_printchar_count('%');
+		(*i)++;
+		return (ret);
 	}
+	conv = ft_parse(format[*i + 1]);
+	if (conv)
+		ret = conv(args);
 	else
 	{
-		ret = ft_printchar_count(format[*i]);
-		(*i)++;
+		*bad = 1;
+		ret = write(1, format + *i, 2);
 	}
+	*i += 2;
 	return (ret);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	int		i;
+	int		bad;
 	int		count;
 	int		ret;
 	va_list	args;
 
+	if (!format)
+		return (-1);
 	i = 0;
+	bad = 0;
 	count = 0;
 	va_start(args, format);
 	while (format[i])
 	{
-		ret = ft_step(format, &i, &args);
+		ret = ft_step(format, &i, &args, &bad);
 		if (ret < 0)
 		{
 			count = -1;

@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:17 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 10:12:11 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/30 14:08:45 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_print_ptr(va_list *args)
 	char			*str;
 	unsigned long	arg;
 
-	arg = va_arg(*args, unsigned long);
+	arg = (unsigned long)va_arg(*args, void *);
 	if (!arg)
 	{
 		ret = write(1, "(nil)", 5);

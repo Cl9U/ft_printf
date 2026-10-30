@@ -6,13 +6,13 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:34:36 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/28 12:21:35 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/30 14:14:25 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_parse(char spec, va_list *args)
+t_conv	ft_parse(char spec)
 {
 	int						i;
 	static const t_parse	table[] = {
@@ -32,7 +32,7 @@ int	ft_parse(char spec, va_list *args)
 	while (table[i].spec)
 	{
 		if (table[i].spec == spec)
-			return (table[i].func(args));
+			return (table[i].func);
 		i++;
 	}
 	return (0);

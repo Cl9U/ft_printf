@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:30:00 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/25 09:44:13 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/30 14:16:08 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_parse
 }	t_parse;
 
 int		ft_printf(const char *format, ...);
-int		ft_parse(char spec, va_list *args);
+t_conv	ft_parse(char spec);
 
 int		ft_print_char(va_list *args);
 int		ft_print_str(va_list *args);
