@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:29:56 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/30 14:15:56 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/31 14:06:46 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_step(const char *format, int *i, va_list *args, int *bad)
 {
 	t_conv	conv;
 	int		ret;
- 
+
 	if (format[*i] != '%')
 		return (ft_printchar_count(format[(*i)++]));
 	if (!format[*i + 1])
