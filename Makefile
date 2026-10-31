@@ -16,7 +16,8 @@ SRCS		= ft_printf.c \
 			ft_printchar_count.c \
 			ft_utoa.c \
 			ft_strlen.c \
-			ft_itoa.c
+			ft_itoa.c \
+			ft_write_all.c
 
 OBJS		= $(SRCS:.c=.o)
 

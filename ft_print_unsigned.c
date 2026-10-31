@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:55:29 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/23 10:00:16 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/31 17:50:18 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_print_unsigned(va_list *args)
 	str = ft_utoa(va_arg(*args, unsigned int), "0123456789", 10);
 	if (!str)
 		return (-1);
-	ret = write(1, str, ft_strlen(str));
+	ret = ft_write_all(str, ft_strlen(str));
 	free(str);
 	return (ret);
 }

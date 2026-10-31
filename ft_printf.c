@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:29:56 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/31 14:06:46 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/31 17:52:25 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_step(const char *format, int *i, va_list *args, int *bad)
 	else
 	{
 		*bad = 1;
-		ret = write(1, format + *i, 2);
+		ret = ft_write_all(format + *i, 2);
 	}
 	*i += 2;
 	return (ret);
