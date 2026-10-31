@@ -6,7 +6,7 @@
 /*   By: sfaraji <sfaraji@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 17:42:33 by sfaraji           #+#    #+#             */
-/*   Updated: 2026/10/31 17:53:34 by sfaraji          ###   ########.fr       */
+/*   Updated: 2026/10/31 17:59:48 by sfaraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_write_all(const char *s, size_t len)
 	while (done < len)
 	{
 		ret = write(1, s + done, len - done);
-		if (ret < 0)
+		if (ret <= 0)
 			return (-1);
 		done += ret;
 	}
