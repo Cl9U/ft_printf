@@ -81,7 +81,4 @@ cc -Wall -Wextra -Werror main.c libftprintf.a -I.
   (register save area, `va_list` layout)
 - The C standard's section on `<stdarg.h>`
 - YouTube videos on how registers work, how the CPU communicates with RAM, and how the CPU works.
-
-### Use of AI
-
-AI was used as a study: to explain how variadic arguments, `va_list` and the x86-64 calling convention work.
+- AI was used as a study and deep to explain how variadic arguments, `va_list` and the x86-64 calling convention work.
