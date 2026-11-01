@@ -9,6 +9,8 @@ static library (`libftprintf.a`). It reads a format string, replaces each
 conversion with the matching variadic argument, writes the result with
 `write`, and returns the number of characters printed (or `-1` on error).
 
+**Result:** this project was validated with a score of 100/100.
+
 Only the mandatory part is implemented. Supported conversions:
 
 | Conversion | Prints |
